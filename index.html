@@ -15,7 +15,7 @@
   <meta property="og:title" content="Otis Read | Music Lessons in Warren, RI" />
   <meta property="og:description" content="Personalized music lessons in a Warren studio — and online. Guitar, banjo, ukulele, mandolin, bass, bouzouki, harmonica. Recordings, gigs, and a lifetime in music." />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/Creativetugs/Otis-Read-Music-Lessons/main/ortis%20art%20photo.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,7 +32,7 @@
         "url": "https://otisread.com/",
         "telephone": "+1-401-247-1402",
         "email": "otisread@gmail.com",
-        "image": "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?auto=format&fit=crop&w=1200&q=80",
+        "image": "https://raw.githubusercontent.com/Creativetugs/Otis-Read-Music-Lessons/main/ortis%20art%20photo.jpg",
         "description": "Private and group music lessons in Warren, Rhode Island and online. Guitar, bass, banjo, ukulele, mandolin, bouzouki, and harmonica for beginners, children, and experienced players.",
         "address": {
           "@type": "PostalAddress",
@@ -65,6 +65,7 @@
         "@type": "Person",
         "@id": "https://otisread.com/#otis",
         "name": "Otis Read",
+        "image": "https://raw.githubusercontent.com/Creativetugs/Otis-Read-Music-Lessons/main/ortis%20art%20photo.jpg",
         "jobTitle": "Musician and music teacher",
         "address": { "@type": "PostalAddress", "addressLocality": "Warren", "addressRegion": "RI" }
       },
@@ -250,20 +251,39 @@
     .hero {
       min-height: 100vh;
       padding-top: calc(var(--banner) + var(--nav));
-      background:
-        linear-gradient(105deg, rgba(28,22,16,0.82) 0%, rgba(28,22,16,0.35) 55%, rgba(28,22,16,0.55) 100%),
-        url("https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?auto=format&fit=crop&w=2000&q=80") center/cover;
       color: var(--white);
-      display: grid;
-      align-items: end;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
       position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("https://raw.githubusercontent.com/Creativetugs/Otis-Read-Music-Lessons/main/musc%20teaching%20.png") center 30% / cover no-repeat;
+      z-index: 0;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(12,10,8,0.72) 0%, rgba(12,10,8,0.38) 36%, rgba(12,10,8,0.08) 62%, transparent 100%),
+        linear-gradient(180deg, rgba(12,10,8,0.5) 0%, rgba(12,10,8,0.12) 48%, rgba(12,10,8,0.35) 100%);
+      z-index: 1;
     }
     .hero-inner {
+      position: relative;
+      z-index: 2;
       width: min(100% - 2.5rem, var(--max));
-      margin: 0 auto 4.5rem;
+      margin: 0 auto;
       display: grid;
-      gap: 2rem;
-      max-width: 780px;
+      justify-items: start;
+      text-align: left;
+      gap: 1.2rem;
+      padding: 2.25rem 0 10rem;
     }
     .eyebrow {
       display: inline-flex;
@@ -281,16 +301,18 @@
       background: var(--gold);
     }
     .hero h1 {
-      font-size: clamp(2.8rem, 7vw, 5.6rem);
+      font-size: clamp(2.6rem, 5.6vw, 4.6rem);
       font-weight: 500;
-      max-width: 14ch;
+      max-width: 11ch;
+      text-shadow: 0 12px 40px rgba(0,0,0,0.45);
     }
     .hero h1 em { font-style: italic; color: var(--gold); }
     .hero-lead {
-      font-size: 1.15rem;
+      font-size: 1.12rem;
       font-weight: 300;
-      max-width: 42ch;
-      color: rgba(255,252,247,0.82);
+      max-width: 36ch;
+      color: rgba(255,252,247,0.88);
+      text-shadow: 0 8px 24px rgba(0,0,0,0.4);
     }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-top: 0.5rem; }
     .btn {
@@ -325,6 +347,8 @@
       border-top: 1px solid rgba(255,252,247,0.18);
       font-size: 0.82rem;
       letter-spacing: 0.04em;
+      max-width: 34rem;
+      width: 100%;
     }
     .hero-meta b { display: block; font-family: var(--display); font-size: 1.35rem; font-weight: 600; color: var(--gold); }
 
@@ -401,6 +425,7 @@
       width: 100%;
       height: 560px;
       object-fit: cover;
+      object-position: top center;
       box-shadow: var(--shadow);
     }
     .prose { color: var(--ink-soft); display: grid; gap: 1rem; margin-top: 1.4rem; }
@@ -559,7 +584,7 @@
     .book {
       background:
         linear-gradient(180deg, rgba(28,22,16,0.88), rgba(28,22,16,0.92)),
-        url("https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1800&q=80") center/cover;
+        url("https://raw.githubusercontent.com/Creativetugs/Otis-Read-Music-Lessons/main/musc%20teaching%20.png") center/cover;
       color: var(--white);
     }
     .book-grid {
@@ -602,6 +627,11 @@
       .split img { height: 380px; }
       .pitch { font-size: 0.68rem; justify-content: space-between; }
       .pitch span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .hero::before { background-position: center 20%; }
+      .hero::after {
+        background: linear-gradient(180deg, rgba(12,10,8,0.72) 0%, rgba(12,10,8,0.45) 38%, rgba(12,10,8,0.2) 100%);
+      }
+      .hero-inner { padding: 1.75rem 0 14rem; }
     }
   </style>
 </head>
@@ -669,7 +699,7 @@
 
     <section id="about">
       <div class="wrap split">
-        <img class="reveal" src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=1200&q=80" alt="Acoustic guitar in warm studio light" />
+        <img class="reveal" src="https://raw.githubusercontent.com/Creativetugs/Otis-Read-Music-Lessons/main/ortis%20art%20photo.jpg" alt="Otis Read, music teacher in Warren, Rhode Island" />
         <div class="reveal">
           <p class="label">The teacher</p>
           <h2 class="section-title">A lifetime in music, taught one student at a time.</h2>
@@ -692,27 +722,27 @@
         <p class="lede reveal">Guitar lessons in Warren, RI — and banjo, ukulele, mandolin, bass, bouzouki, harmonica — in the studio or online from anywhere.</p>
         <div class="inst-grid">
           <article class="inst featured reveal">
-            <img src="https://images.unsplash.com/photo-1510915361894-dbf9c0a0a3da?auto=format&fit=crop&w=1400&q=80" alt="Electric and acoustic guitar" />
+            <img src="https://raw.githubusercontent.com/Creativetugs/Otis-Read-Music-Lessons/main/Guitar.png" alt="Guitar lessons with Otis Read" />
             <h3>Guitar</h3>
             <p>Acoustic and electric. Chords, fingerpicking, lead, accompanying your singing, the songs you have always wanted under your hands.</p>
           </article>
           <article class="inst reveal">
-            <img src="https://images.unsplash.com/photo-1564186763535-ebb19daf8c50?auto=format&fit=crop&w=800&q=80" alt="Banjo" />
+            <img src="https://raw.githubusercontent.com/Creativetugs/Otis-Read-Music-Lessons/main/Banjo.png" alt="Banjo lessons with Otis Read" />
             <h3>Banjo</h3>
             <p>Bluegrass, clawhammer, and the patience students write home about.</p>
           </article>
           <article class="inst reveal">
-            <img src="https://images.unsplash.com/photo-1618035851335-0c1c8759b5e3?auto=format&fit=crop&w=800&q=80" alt="Ukulele" />
+            <img src="https://raw.githubusercontent.com/Creativetugs/Otis-Read-Music-Lessons/main/Ukulele.png" alt="Ukulele lessons with Otis Read" />
             <h3>Ukulele</h3>
             <p>The welcoming door. Kids, adults, Tiverton group class — ukuleles provided.</p>
           </article>
           <article class="inst reveal">
-            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80" alt="Mandolin and folk instruments" />
+            <img src="https://raw.githubusercontent.com/Creativetugs/Otis-Read-Music-Lessons/main/Mandolin%20%26%20bouzouki.png" alt="Mandolin and bouzouki lessons with Otis Read" />
             <h3>Mandolin &amp; bouzouki</h3>
             <p>Traditional and contemporary — the instruments most teachers cannot offer.</p>
           </article>
           <article class="inst reveal">
-            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80" alt="Music studio" />
+            <img src="https://raw.githubusercontent.com/Creativetugs/Otis-Read-Music-Lessons/main/musc%20teaching%20.png" alt="Bass and harmonica lessons in Otis Read's studio" />
             <h3>Bass &amp; harmonica</h3>
             <p>Groove, timing, and the color that makes a song feel like a band.</p>
           </article>
